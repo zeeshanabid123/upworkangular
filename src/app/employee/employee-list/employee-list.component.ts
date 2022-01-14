@@ -21,7 +21,7 @@ import { EmployeeEditComponent } from '../employee-edit/employee-edit.component'
 })
 export class EmployeeListComponent implements OnInit {
   pageTitle = 'Employee List';
-  // filteredEmployees: Observable<Employee[]>;
+ filteredEmployeess: Observable<Employee[]>;
   filteredEmployees: Employee[]=[];
 
   //employees: Observable<Employee[]>;
@@ -41,7 +41,7 @@ export class EmployeeListComponent implements OnInit {
 
   constructor(
     private employeeService: EmployeeService,
-    private store: Store<AppState>,
+    private store: Store<any>,
     private modalService: NgbModal
   ) {}
 
@@ -54,9 +54,9 @@ export class EmployeeListComponent implements OnInit {
   ngOnInit(): void {
     debugger;
     this.getemployeedata();
-    // this.store.dispatch(new GetAllEmployees());
-    // this.filteredEmployees = this.store.select(getAllEmployees);
-
+    this.store.dispatch(new GetAllEmployees());
+   this.filteredEmployeess = this.store.select(getAllEmployees);
+console.log(this.filteredEmployeess)
     // this.store
     //   .select(getEmployeesError)
     //   .subscribe((error) => this.loadingError(error));

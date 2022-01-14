@@ -20,7 +20,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { EmployeeService } from './employee/employee.service';
 
  export const reducers: ActionReducerMap<any> = {
-  employees: employeesReducer.reducer,
+  employees: employeesReducer.reducer
 };
 @NgModule({
   declarations: [
